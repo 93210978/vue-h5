@@ -1,14 +1,14 @@
 <!--
  * @Author: 陆伟
  * @Date: 2021-01-22 15:40:32
- * @LastEditTime: 2021-01-22 17:21:47
+ * @LastEditTime: 2021-01-24 11:54:02
  * @LastEditors: 陆伟
  * @Description: 
 -->
 创建项目
 ```
-  yarn create vite-app vue3  
-  cd vue3  
+  yarn create vite-app vue-h5  
+  cd vue-h5  
   yarn  
   yarn dev  
 ```
