@@ -1,7 +1,7 @@
 <!--
  * @Author: 陆伟
  * @Date: 2021-01-22 15:40:32
- * @LastEditTime: 2021-01-24 11:54:02
+ * @LastEditTime: 2021-01-24 16:49:10
  * @LastEditors: 陆伟
  * @Description: 
 -->
@@ -17,6 +17,7 @@
 ```
   yarn add vue-router@next
   yarn add vant@next
+  yarn add less less-loader --dev
 ```
 
 新增 router/index.js 文件，并定义好路由
