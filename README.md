@@ -1,7 +1,7 @@
 <!--
  * @Author: 陆伟
  * @Date: 2021-01-22 15:40:32
- * @LastEditTime: 2021-01-24 16:49:10
+ * @LastEditTime: 2021-02-20 09:51:48
  * @LastEditors: 陆伟
  * @Description: 
 -->
@@ -22,22 +22,22 @@
 
 新增 router/index.js 文件，并定义好路由
 ```
-  import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
-  import Home from '../views/Home.vue'
-  import Detail from '../views/Detail.vue'
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
+import Home from '../views/Home.vue'
+import Detail from '../views/Detail.vue'
 
-  // createRouter 创建路由实例
-  const router = createRouter({
-    // hash模式：createWebHashHistory、history模式：createWebHistory
-    history: createWebHistory(),
-    routes: [
-      { path: '/', component: Home },
-      { path: '/detail', component: Detail },
-    ]
-  })
+// createRouter 创建路由实例
+const router = createRouter({
+  // hash模式：createWebHashHistory、history模式：createWebHistory
+  history: createWebHistory(),
+  routes: [
+    { path: '/', component: Home },
+    { path: '/detail', component: Detail },
+  ]
+})
 
-  // 抛出路由实例, 在 main.js 中引用
-  export default router
+// 抛出路由实例, 在 main.js 中引用
+export default router
 ```
 在 main.js 文件引入依赖
 ```
@@ -57,7 +57,7 @@ app.use(Vant)
 app.mount('#app')
 ```
 
-修改 App.vue 文件
+修改 App.vue 文件 增加路由标签
 ```
 <template>
   <router-view />
