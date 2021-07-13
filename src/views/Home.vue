@@ -1,7 +1,7 @@
 <!--
  * @Author: 陆伟
- * @Date: 2021-04-09 16:40:18
- * @LastEditTime: 2021-04-09 16:41:15
+ * @Date: 2021-07-13 14:13:51
+ * @LastEditTime: 2021-07-13 14:14:03
  * @LastEditors: 陆伟
  * @Description: 
 -->
@@ -9,7 +9,7 @@
   <van-button type="primary" @click="toDetail">去详情</van-button>
 </template>
 
-<script>
+<script lang="ts">
 import { useRouter } from 'vue-router'
 
 export default {

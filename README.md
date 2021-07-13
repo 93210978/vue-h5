@@ -1,108 +1,27 @@
-创建项目
-```
-  yarn create vite-app vue-h5  
-  cd vue-h5  
-  yarn  
-  yarn dev  
-```
+# Vue 3 + Typescript + Vite
 
-安装依赖
-```
-  yarn add vue-router@next
-  yarn add vant@next
-  yarn add less less-loader --dev
-```
+This template should help get you started developing with Vue 3 and Typescript in Vite.
 
-新增 router/index.js 文件，并定义好路由
-```
-  import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
-  import Home from '../views/Home.vue'
-  import Detail from '../views/Detail.vue'
+## Recommended IDE Setup
 
-  // createRouter 创建路由实例
-  const router = createRouter({
-    // hash模式：createWebHashHistory、history模式：createWebHistory
-    history: createWebHistory(),
-    routes: [
-      { path: '/', component: Home },
-      { path: '/detail', component: Detail },
-    ]
-  })
+[VSCode](https://code.visualstudio.com/) + [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur). Make sure to enable `vetur.experimental.templateInterpolationService` in settings!
 
-  // 抛出路由实例, 在 main.js 中引用
-  export default router
-```
-在 main.js 文件引入依赖
-```
-import { createApp } from 'vue'
-import App from './App.vue'
-import './index.css'
+### If Using `<script setup>`
 
-import router from './router'
-import Vant from 'vant';
-import 'vant/lib/index.css';
+[`<script setup>`](https://github.com/vuejs/rfcs/pull/227) is a feature that is currently in RFC stage. To get proper IDE support for the syntax, use [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) instead of Vetur (and disable Vetur).
 
-const app = createApp(App)
+## Type Support For `.vue` Imports in TS
 
-app.use(router)
-app.use(Vant)
+Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can use the following:
 
-app.mount('#app')
-```
+### If Using Volar
 
-修改 App.vue 文件
-```
-<template>
-  <router-view />
-</template>
-<script>
-export default {
-  name: 'App'
-}
-</script>
-```
+Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
 
-新增views/Home.vue文件
-```
-<template>
-  <van-button type="primary" @click="toDetail">去详情</van-button>
-</template>
+### If Using Vetur
 
-<script>
-import { useRouter } from 'vue-router'
-
-export default {
-  setup() {
-    const router = useRouter()
-    const toDetail = () => {
-      router.push('detail')
-    }
-    return { toDetail }
-  }
-}
-</script>
-```
-新增views/Detail.vue文件
-```
-<template>
-  <van-button type="primary" @click="toHome">去首页</van-button>
-</template>
-
-<script>
-import { useRouter } from 'vue-router'
-
-export default {
-  setup() {
-    const router = useRouter()
-    const toHome = () => {
-      router.push('/')
-    }
-    return { toHome }
-  }
-}
-</script>
-```
-启动
-```
-yarn dev
-```
+1. Install and add `@vuedx/typescript-plugin-vue` to the [plugins section](https://www.typescriptlang.org/tsconfig#plugins) in `tsconfig.json`
+2. Delete `src/shims-vue.d.ts` as it is no longer needed to provide module info to Typescript
+3. Open `src/main.ts` in VSCode
+4. Open the VSCode command palette
+5. Search and run "Select TypeScript version" -> "Use workspace version"
