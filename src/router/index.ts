@@ -1,7 +1,7 @@
 /*
  * @Author: 陆伟
  * @Date: 2021-07-13 14:07:45
- * @LastEditTime: 2021-07-13 14:11:14
+ * @LastEditTime: 2021-07-13 15:31:14
  * @LastEditors: 陆伟
  * @Description: 
  */
@@ -12,7 +12,7 @@ import Detail from '../views/Detail.vue'
 // createRouter 创建路由实例
 const router = createRouter({
   // hash模式：createWebHashHistory、history模式：createWebHistory
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: [
     { path: '/', component: Home },
     { path: '/detail', component: Detail },
